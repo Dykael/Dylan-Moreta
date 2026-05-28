@@ -1,0 +1,612 @@
+1. CONFIGURACIÓN GENERAL, RESETEO Y ATMÓSFERA GÓTICA
+   ========================================================================== */
+
+/* Reseteo para eliminar comportamientos por defecto y unificar tamaños */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base del sitio enfocada en tonos oscuros y tipografía de herencia clásica */
+html {
+    font-family: 'Playfair Display', serif;
+    scroll-behavior: smooth;
+    color: #480058; /* El morado más oscuro rige la lectura principal */
+    background-color: #480058;
+}
+
+/* Eliminación de viñetas en listas */
+ul {
+    list-style: none;
+}
+
+/* Estilo base para enlaces limpios */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Selection: Cambia el color de resaltado de texto cuando el usuario lo selecciona */
+::-selection {
+    background-color: #FF7DAC;
+    color: #480058;
+}
+
+/* ==========================================================================
+   2. COMPONENTES COMPARTIDOS Y ACENTOS DRAMÁTICOS
+   ========================================================================== */
+
+/* Contenedor centralizado para el contenido */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Títulos de sección solemnes, de gran tamaño y centrados */
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Botón principal: Diseñado como un destello fucsia neón en la oscuridad */
+.btn-primary {
+    display: inline-block;
+    background-color: #FF7DAC; /* Color de acento (llamativo) */
+    color: #480058; /* Contraste ultra-oscuro */
+    padding: 14px 35px;
+    border-radius: 0px; /* Bordes rectos para dar una estética más arquitectónica y fría */
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(255, 125, 172, 0.4); /* Resplandor sutil (Glow effect) */
+    transition: all 0.4s ease;
+}
+
+/* Hover gótico: Cambia al morado eléctrico y genera un destello imponente */
+.btn-primary:hover {
+    background-color: #B017FF; /* Color secundario (medio) */
+    color: #EEE5DD;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(176, 23, 255, 0.8);
+}
+
+/* ==========================================================================
+   3. HEADER / MENÚ DE NAVEGACIÓN NOCTURNO
+   ========================================================================== */
+
+/* Encabezado fijo con el tono morado más oscuro y borde inferior afilado */
+.main-header {
+    background-color: #480058; /* Color principal (oscuro) */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #B017FF; /* Línea divisoria en color medio */
+}
+
+/* Alineación con flexbox para separar el logo del menú de navegación */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+}
+
+/* Placeholder del logotipo con aspecto heráldico o de sello */
+.logo-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #B017FF;
+    color: #EEE5DD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    letter-spacing: 1px;
+    border: 1px solid #FF7DAC;
+}
+
+/* Enlaces horizontales del menú */
+.navigation ul {
+    display: flex;
+    gap: 35px;
+}
+
+/* Enlaces en color claro pergamino con transición a fucsia sangriento */
+.navigation a {
+    color: #EEE5DD; /* Color claro 2 */
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #FF7DAC; /* Acento llamativo */
+}
+
+/* ==========================================================================
+   4. SECCIÓN HERO (BIENVENIDA TEATRAL)
+   ========================================================================== */
+
+/* Fondo claro cenizo/pergamino con amplio espacio para el menú superior */
+.hero-section {
+    background-color: #975aa7; /* Color claro 2 */
+    padding: 180px 0 120px 0;
+}
+
+/* Flexbox en dos columnas para el texto dramático y la imagen del autor */
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+/* Tipografía de gran peso e importancia visual */
+.hero-content h1 {
+    font-size: 3.8rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+/* Subtítulo elegante en morado medio */
+.hero-content .subtitle {
+    font-size: 1.6rem;
+    color: #B017FF; /* Color secundario */
+    margin-bottom: 35px;
+    font-weight: 600;
+    font-style: italic; /* Toque literario clásico */
+}
+
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Fotografía circular con un borde grueso y oscuro que evoca un camafeo antiguo */
+.profile-image {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 10px solid #480058; /* Enmarcado en el color principal oscuro */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   5. SECCIÓN MIS PROYECTOS (GALERÍA DE LAS SOMBRAS)
+   ========================================================================== */
+
+/* Fondo intermedio gris/púrpura neblina */
+.projects-section {
+    background-color: #B695B7; /* Color claro 1 */
+    padding: 110px 0;
+    color: #480058;
+}
+
+/* Fila flexible para albergar las tres obras multimedia */
+.projects-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+/* Tarjetas de proyectos estilizadas como criptas o monolitos oscuros */
+.project-card {
+    flex: 1;
+    background-color: #480058; /* Fondo ultra oscuro invertido */
+    color: #EEE5DD; /* Texto claro para lectura óptima */
+    border-radius: 4px; /* Esquinas casi rectas, duras */
+    overflow: hidden;
+    border: 1px solid #B017FF;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover: Eleva la tarjeta y tiñe el borde de fucsia vibrante */
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #FF7DAC;
+    box-shadow: 0 15px 35px rgba(255, 125, 172, 0.3);
+}
+
+/* Imagen del proyecto con un filtro sutil de desaturación que revive al pasar el cursor */
+.project-img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    filter: grayscale(40%) contrast(110%);
+    transition: filter 0.4s ease;
+}
+
+.project-card:hover .project-img {
+    filter: grayscale(0%) contrast(100%);
+}
+
+/* Espaciado del texto interno del proyecto */
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   6. SECCIÓN HABILIDADES (INSIGNIAS DE LAS SOMBRAS)
+   ========================================================================== */
+
+/* Contraste claro intercalado */
+.skills-section {
+    background-color: #975aa7; /* Color claro 2 */
+    padding: 110px 0;
+}
+
+/* Rejilla de 4 columnas equidistantes */
+.skills-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Cajas de habilidades oscuras y solemnes */
+.skill-card {
+    flex: 1;
+    background-color: #480058; /* Contraste oscuro completo */
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 0px; /* Estructura geométrica severa */
+    border-left: 4px solid #FF7DAC; /* Detalle lineal en el borde izquierdo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Al pasar el mouse, toda la caja adquiere el tono del color secundario medio */
+.skill-card:hover {
+    background-color: #B017FF;
+    transform: scale(1.03);
+}
+
+/* Estilo de texto interno de la habilidad */
+.skill-name {
+    color: #EEE5DD;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   7. SECCIÓN DE CONTACTO (CONTRATO CREATIVO)
+   ========================================================================== */
+
+/* Fondo de transición medio */
+.contact-section {
+    background-color: #B695B7; /* Color claro 1 */
+    padding: 110px 0;
+}
+
+/* Estructura dividida en dos para la persuasión y la interacción */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-text h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.contact-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+/* Bloque contenedor del formulario puramente gótico, simulando un monolito negro */
+.contact-form-container {
+    flex: 1;
+    background-color: #480058; /* Fondo principal oscuro */
+    padding: 45px;
+    border-radius: 0px;
+    border: 1px solid #FF7DAC;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiquetas del formulario con color claro pergamino */
+.form-group label {
+    color: #EEE5DD;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Campos de texto oscurecidos con bordes púrpura */
+.form-group input,
+.form-group textarea {
+    padding: 14px;
+    border: 1px solid #B017FF;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente oscuro */
+    font-family: inherit;
+    font-size: 1rem;
+    color: #EEE5DD;
+    transition: all 0.3s ease;
+}
+
+/* Al enfocar el input, el borde brilla en fucsia intenso */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FF7DAC;
+    box-shadow: 0 0 10px rgba(255, 125, 172, 0.5);
+}
+
+/* Botón de envío que abarca todo el ancho del formulario */
+.btn-submit {
+    width: 100%;
+    background-color: #FF7DAC; /* Color de acento */
+    color: #480058;
+    padding: 15px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 125, 172, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #B017FF;
+    color: #EEE5DD;
+    box-shadow: 0 0 25px rgba(176, 23, 255, 0.6);
+}
+
+.copyright {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+}
+
+/* Redes sociales dispuestas horizontalmente */
+.social-links {
+    display: flex;
+    gap: 30px;
+}
+
+/* Enlaces sociales que reaccionan con un sutil destello fucsia al posarse sobre ellos */
+.social-links a {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #FF7DAC;
+    text-shadow: 0 0 10px rgba(255, 125, 172, 0.6);
+}
+/* ==========================================================================
+   6. SECCIÓN HABILIDADES (MEDIDORES DE PODER OSCURO)
+   ========================================================================== */
+
+/* Regreso al fondo claro 2 para mantener el contraste intercalado */
+.skills-section {
+    background-color: #975aa7; /* Color claro 2 */
+    padding: 110px 0;
+}
+
+/* Distribución horizontal de las 4 tarjetas usando Flexbox */
+.skills-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Contenedor individual de la habilidad estilizado como monolito gótico */
+.skill-card {
+    flex: 1;
+    background-color: #480058; /* Fondo principal oscuro */
+    padding: 30px 20px;
+    border-radius: 0px; /* Estética severa y angular */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(176, 23, 255, 0.3); /* Borde sutil del color medio */
+}
+
+/* Efecto hover: Elevación y realce del borde perimetral */
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #FF7DAC; /* Brilla en el color de acento */
+}
+
+/* Alineación interna usando Flexbox para separar el nombre del porcentaje */
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Estilo para el nombre técnico de la habilidad */
+.skill-name {
+    color: #EEE5DD; /* Color claro 2 */
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estilo numérico del porcentaje con inclinación dramática */
+.skill-percentage {
+    color: #FF7DAC; /* Color de acento llamativo */
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* Fondo de la barra de progreso (la ranura vacía) */
+.progress-bar-bg {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro profundo y hundido */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Relleno de la barra que representa el conocimiento (Energía líquida fucsia) */
+.progress-bar-fill {
+    height: 100%;
+    background-color: #FF7DAC; /* Color de acento */
+    box-shadow: 0 0 10px rgba(255, 125, 172, 0.8); /* Brillo neón interno */
+    transition: width 1s ease-in-out; /* Transición por si se añade animación posterior */
+}
+
+/* Al hacer hover en la tarjeta, el relleno se sobrecarga y cambia al color púrpura medio */
+.skill-card:hover .progress-bar-fill {
+    background-color: #B017FF; /* Color secundario (medio) */
+    box-shadow: 0 0 12px rgba(176, 23, 255, 1);
+}
+/* ==========================================================================
+   8. FOOTER / GRAFICO, MINI Y BASADO EN ISOTIPOS
+   ========================================================================== */
+
+/* Reducción radical del espacio vertical para lograr un bloque compacto */
+.main-footer {
+    background-color: #480058; /* Color principal (oscuro) */
+    color: #EEE5DD; /* Color claro 2 */
+    padding: 25px 0; /* Altura muy reducida y discreta */
+    border-top: 1px solid rgba(176, 23, 255, 0.2); /* Divisor sutil */
+}
+
+/* Alineación horizontal perfecta en los extremos mediante Flexbox */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centrado vertical exacto de los isotipos con el año */
+}
+
+/* Tipografía de año limpia y de opacidad baja para que no compita visualmente */
+.copyright {
+    font-size: 0.9rem;
+    font-weight: 700;
+    opacity: 0.4;
+    letter-spacing: 1px;
+}
+
+/* Contenedor de isotipos en fila */
+.footer-social-icons {
+    display: flex;
+    gap: 22px; /* Separación geométrica idéntica */
+}
+
+/* Estilo para los isotipos vectoriales (SVG) */
+.social-icon {
+    color: #B017FF; /* Inician en el color secundario (medio) */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover gráfico: el vector cambia al color de acento y reacciona mecánicamente */
+.social-icon:hover {
+    color: #FF7DAC; /* Brillo en color de acento */
+    transform: scale(1.15); /* Reacción de escala limpia */
+}
+
+/* Asegura que los vectores internos hereden la transición cromática correctamente */
+.social-icon svg {
+    transition: fill 0.3s ease;
+}
+/* ==========================================================================
+   4.5. SECCIÓN SOBRE MÍ (DECLARACIÓN PERSONAL)
+   ========================================================================== */
+
+/* Fondo intermedio para cortar la transición de secciones */
+.about-section {
+    background-color: #B695B7; /* Color claro 1 */
+    padding: 100px 0;
+    color: #480058; /* Texto oscuro para máxima legibilidad */
+}
+
+/* Caja de contenido estilizada de manera editorial y minimalista */
+.about-content {
+    max-width: 800px; /* Estrechamos el texto para que la lectura sea más cómoda y elegante */
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Tipografía fluida con el toque literario/gótico de las itálicas */
+.about-text {
+    font-size: 1.35rem;
+    line-height: 1.8;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    position: relative;
+}
+
+/* Detalles decorativos sutiles en los extremos del texto (estilo corchete arquitectónico) */
+.about-content::before {
+    content: "✦";
+    display: block;
+    font-size: 1.5rem;
+    color: #480058;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
