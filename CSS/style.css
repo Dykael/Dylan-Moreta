@@ -259,6 +259,72 @@ a {
     line-height: 1.6;
     opacity: 0.8;
 }
+/* ==========================================================================
+   9. INTERACTIVIDAD: VENTANA MODAL (LIGHTBOX) ESTILO CINEMÁTICO
+   ========================================================================== */
+
+/* Cambia el cursor sobre las imágenes de los proyectos para indicar que son expandibles */
+.project-img {
+    cursor: zoom-in;
+}
+
+/* Capa de fondo oscura que cubre toda la pantalla con un tono morado de alta opacidad */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(72, 0, 88, 0.95); /* Color principal oscuro con 95% de opacidad */
+    z-index: 2000; /* Prioridad máxima por encima del menú de navegación */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none; /* Evita que interfiera con los clics mientras está oculto */
+    transition: opacity 0.4s ease; /* Transición suave de desvanecimiento */
+}
+
+/* Clase de activación inyectada por JavaScript para desplegar el visor */
+.modal-overlay.modal-activo {
+    opacity: 1;
+    pointer-events: auto; /* Habilita el clic de cierre */
+}
+
+/* Estilo gráfico de la imagen en pantalla completa */
+.modal-content {
+    max-width: 85%;
+    max-height: 80%;
+    object-fit: contain; /* Conserva las proporciones reales de la foto sin recortes */
+    border: 2px solid #FF7DAC; /* Marco delgado perimetral en color de acento */
+    box-shadow: 0 0 30px rgba(176, 23, 255, 0.6); /* Brillo neón difuminado */
+    transform: scale(0.9); /* Inicia ligeramente más pequeña para simular una entrada */
+    transition: transform 0.4s ease;
+    cursor: zoom-out; /* Indica que al hacer clic se encogerá */
+}
+
+/* Animación de escala cuando la ventana modal entra en pantalla activa */
+.modal-overlay.modal-activo .modal-content {
+    transform: scale(1);
+}
+
+/* Botón de cierre en forma de 'X' posicionado en la esquina superior */
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #EEE5DD; /* Color claro 2 */
+    font-size: 3rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover de la X: Cambia al fucsia sangriento y rota levemente */
+.modal-close:hover {
+    color: #FF7DAC; /* Color de acento */
+    transform: rotate(90deg);
+}
 
 /* ==========================================================================
    6. SECCIÓN HABILIDADES (INSIGNIAS DE LAS SOMBRAS)

@@ -67,33 +67,50 @@
             <div class="section-container">
                 <h2 class="section-title">Mis Proyectos</h2>
                 <div class="projects-grid">
-                    <!-- Tarjeta de Proyecto 1 -->
                     <article class="project-card">
-                        <img src="img/AFICHE DESIGN_page-0001.jpg" alt="Obra Audiovisual I" class="project-img">
+                        <img src="img/AFICHE DESIGN_page-0001.jpg" alt="Obra Audiovisual I" class="project-img" onclick="abrirImagen(this.src)">
                         <div class="project-info">
-                            <h3>Afiche</h3>
-                            <p>Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <h3>Afiche Multimedia</h3>
+                            <p>Este afiche fue realizado uniendo diferentes elementos visuales para representar a la carrera de multimedia y produccíon audiovisual</p>
                         </div>
                     </article>
-                    <!-- Tarjeta de Proyecto 2 -->
                     <article class="project-card">
-                        <img src="img/SILENT HILL CHARACTERS_page-0001.jpg" alt="Obra Audiovisual II" class="project-img">
+                        <img src="img/SILENT HILL CHARACTERS_page-0001.jpg" alt="Obra Audiovisual II" class="project-img" onclick="abrirImagen(this.src)">
                         <div class="project-info">
                             <h3>Portada de revista</h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                            <p>Esta portada la realicé con la tematica de silent hill</p>
                         </div>
                     </article>
-                    <!-- Tarjeta de Proyecto 3 -->
                     <article class="project-card">
-                        <img src="img/SILENT HILL CHARACTERS_page-0002.jpg" alt="Obra Audiovisual III" class="project-img">
+                        <img src="img/SILENT HILL CHARACTERS_page-0004.jpg" alt="Obra Audiovisual III" class="project-img" onclick="abrirImagen(this.src)">
                         <div class="project-info">
-                            <h3>Gerarquia visual</h3>
-                            <p>Realizado con diferentes elementos visuales tratande hacer una afiche que represente a la carrera.</p>
+                            <h3>Gerarquia visual o pagina de revista</h3>
+                            <p>lo realice para tener un contenido que convinara y entrara en la sección de la revista .</p>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
+
+        <div id="lightboxModal" class="modal-overlay" onclick="cerrarImagen()">
+            <span class="modal-close">&times;</span>
+            <img id="modalImg" class="modal-content" src="" alt="Vista en pantalla completa">
+        </div>
+
+    </main>
+
+    <script>
+        // Función educativa: Captura la URL de la imagen clickeada y hace visible el contenedor modal
+        function abrirImagen(urlItem) {
+            document.getElementById("modalImg").src = urlItem; // Asigna la ruta de la imagen
+            document.getElementById("lightboxModal").classList.add("modal-activo"); // Muestra el overlay
+        }
+
+        // Función educativa: Quita la clase activa para ocultar el modal cuando se hace clic fuera de la imagen o en la 'X'
+        function cerrarImagen() {
+            document.getElementById("lightboxModal").classList.remove("modal-activo");
+        }
+    </script>
 
         <!-- Sección "Habilidades": Presenta las aptitudes con barras de progreso y porcentajes -->
         <!-- Sección "Habilidades": Herramientas de diseño y producción con porcentajes -->
@@ -120,7 +137,7 @@
                             <span class="skill-percentage">40%</span>
                         </div>
                         <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                            <div class="progress-bar-fill" style="width: 40%;"></div>
                         </div>
                     </div>
 
@@ -131,7 +148,7 @@
                             <span class="skill-percentage">30%</span>
                         </div>
                         <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 70%;"></div>
+                            <div class="progress-bar-fill" style="width: 30%;"></div>
                         </div>
                     </div>
 
@@ -142,7 +159,7 @@
                             <span class="skill-percentage">40%</span>
                         </div>
                         <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                            <div class="progress-bar-fill" style="width: 40%;"></div>
                         </div>
                     </div>
 
@@ -160,7 +177,7 @@
                             <span class="skill-percentage">50%</span>
                         </div>
                         <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                            <div class="progress-bar-fill" style="width: 50%;"></div>
                         </div>
                     </div>
                     <!-- Tarjeta de Habilidad 2 (80%) -->
@@ -170,7 +187,7 @@
                             <span class="skill-percentage">10%</span>
                         </div>
                         <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                            <div class="progress-bar-fill" style="width: 10%;"></div>
                         </div>
                     </div>
                     <!-- Tarjeta de Habilidad 3 (75%) -->
@@ -180,7 +197,7 @@
                             <span class="skill-percentage">30%</span>
                         </div>
                         <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 75%;"></div>
+                            <div class="progress-bar-fill" style="width: 30%;"></div>
                         </div>
                     </div>
                     <!-- Tarjeta de Habilidad 4 (85%) -->
@@ -190,7 +207,7 @@
                             <span class="skill-percentage">50%</span>
                         </div>
                         <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                            <div class="progress-bar-fill" style="width: 50%;"></div>
                         </div>
                     </div>
                 </div>
