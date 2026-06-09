@@ -121,17 +121,21 @@
     </main>
 
     <script>
-        // Referencias de los elementos del DOM
+        // Referencias del DOM
         const modal = document.getElementById("lightboxModal");
         const modalImg = document.getElementById("modalImg");
-        const modalVideo = document.getElementById("modalVideo");
 
-        // Función Educativa: Abre imágenes fijas en el visor gótico
+        // Función 1: Abre imágenes fijas en el visor del portafolio (Gothic modal)
         function abrirImagen(urlFoto) {
-            modalVideo.style.display = "none"; 
             modalImg.src = urlFoto;
-            modalImg.style.display = "block";  
             modal.classList.add("modal-activo");
+        }
+
+        // Función 2: Cierra el modal de fotos
+        function cerrarModal() {
+            modal.classList.remove("modal-activo");
+            modalImg.src = "";
+        }
         }
     </script>
 
