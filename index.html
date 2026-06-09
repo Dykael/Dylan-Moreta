@@ -117,60 +117,6 @@
             modalImg.style.display = "block";  
             modal.classList.add("modal-activo");
         }
-
-        // Función Educativa: Abre el video y solicita pantalla completa nativa
-        function abrirVideo(urlVideo) {
-            modalImg.style.display = "none";   
-            modalVideo.src = urlVideo;
-            modalVideo.style.display = "block"; 
-            modal.classList.add("modal-activo");
-            
-            modalVideo.play();
-
-            // Ejecución de la pantalla completa según el navegador
-            if (modalVideo.requestFullscreen) {
-                modalVideo.requestFullscreen();
-            } else if (modalVideo.webkitRequestFullscreen) {
-                modalVideo.webkitRequestFullscreen();
-            } else if (modalVideo.msRequestFullscreen) {
-                modalVideo.msRequestFullscreen();
-            }
-        }
-
-        // Función Educativa CENTRAL: Esta es la que ejecuta la 'X'. 
-        // Detiene el video, limpia la memoria y cierra las pantallas completas.
-        function cerrarMultimedia() {
-            // 1. Oculta la interfaz del modal
-            modal.classList.remove("modal-activo");
-            
-            // 2. Apaga y resetea el reproductor de video para que no siga sonando
-            modalVideo.pause();                 
-            modalVideo.src = "";                
-            modalImg.src = "";
-            
-            // 3. Si el sistema seguía en pantalla completa nativa, lo obliga a salir
-            if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                }
-            }
-        }
-
-        // Escuchadores de eventos educativos: Si el usuario sale usando la tecla 'ESC' del teclado 
-        // o los botones nativos del teléfono, el código lo detecta y ejecuta nuestra función de cierre.
-        document.addEventListener('fullscreenchange', () => {
-            if (!document.fullscreenElement) cerrarMultimedia();
-        });
-        document.addEventListener('webkitfullscreenchange', () => {
-            if (!document.webkitFullscreenElement) cerrarMultimedia();
-        });
-        document.addEventListener('msfullscreenchange', () => {
-            if (!document.msFullscreenElement) cerrarMultimedia();
-        });
     </script>
 
         <!-- Sección "Habilidades": Presenta las aptitudes con barras de progreso y porcentajes -->
